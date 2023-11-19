@@ -1,0 +1,229 @@
+[gd_scene load_steps=17 format=3 uid="uid://dqllph7fo3vkq"]
+
+[ext_resource type="PackedScene" uid="uid://b3kirq0b2bqf1" path="res://kenney_racing-kit/Models/GLTF format/raceCarOrange.glb" id="1_nxihb"]
+[ext_resource type="Texture2D" uid="uid://dh3x76s7pnln5" path="res://shrub2.png" id="2_qybj8"]
+[ext_resource type="Texture2D" uid="uid://1jaj8l5kyere" path="res://asphalt_road_2.jpg" id="3_il3qo"]
+[ext_resource type="PackedScene" uid="uid://doitsh7m05ml6" path="res://kenney_racing-kit/Models/GLTF format/treeLarge.glb" id="4_2a3od"]
+[ext_resource type="PackedScene" uid="uid://cndopof1bp1o1" path="res://kenney_racing-kit/Models/GLTF format/barrierWall.glb" id="4_733g2"]
+[ext_resource type="PackedScene" uid="uid://c23l8vec2rutf" path="res://kenney_racing-kit/Models/GLTF format/treeSmall.glb" id="5_33ueq"]
+[ext_resource type="PackedScene" uid="uid://digitn7ucdg33" path="res://kenney_racing-kit/Models/GLTF format/raceCarRed.glb" id="7_rmm1r"]
+[ext_resource type="PackedScene" uid="uid://cmmgg2quuxde4" path="res://kenney_racing-kit/Models/GLTF format/overheadRoundColored.glb" id="8_i5efb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jihtf"]
+albedo_texture = ExtResource("2_qybj8")
+uv1_scale = Vector3(15, 15, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w012m"]
+albedo_color = Color(0.45098, 0.639216, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p0wgb"]
+material = SubResource("StandardMaterial3D_w012m")
+size = Vector3(1, 8, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4w0r"]
+albedo_texture = ExtResource("3_il3qo")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu48e"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_prt3m"]
+material = SubResource("StandardMaterial3D_lu48e")
+size = Vector3(10, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e17b6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ffh1"]
+material = SubResource("StandardMaterial3D_e17b6")
+size = Vector3(0.15, 0.01, 1)
+
+[node name="Fondo" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.5, 0)
+material_override = SubResource("StandardMaterial3D_jihtf")
+mesh = SubResource("BoxMesh_p0wgb")
+
+[node name="Carretera" type="Node3D" parent="."]
+
+[node name="Liso" type="MeshInstance3D" parent="Carretera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_j4w0r")
+mesh = SubResource("BoxMesh_prt3m")
+skeleton = NodePath("")
+
+[node name="Rallas" type="Node3D" parent="Carretera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+
+[node name="Linea" type="MeshInstance3D" parent="Carretera/Rallas"]
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea2" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea3" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea4" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea5" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea6" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Linea7" type="MeshInstance3D" parent="Carretera/Rallas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+mesh = SubResource("BoxMesh_3ffh1")
+skeleton = NodePath("../../..")
+
+[node name="Barrier" type="Node3D" parent="Carretera"]
+
+[node name="barrierWall" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 0)
+
+[node name="barrierWall2" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 1)
+
+[node name="barrierWall3" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 2)
+
+[node name="barrierWall4" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 3)
+
+[node name="barrierWall5" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 4)
+
+[node name="barrierWall6" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 5)
+
+[node name="barrierWall7" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 6)
+
+[node name="barrierWall8" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 7)
+
+[node name="barrierWall9" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 8)
+
+[node name="barrierWall10" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -8)
+
+[node name="barrierWall11" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -7)
+
+[node name="barrierWall12" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -6)
+
+[node name="barrierWall13" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -5)
+
+[node name="barrierWall14" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -4)
+
+[node name="barrierWall15" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -3)
+
+[node name="barrierWall16" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -2)
+
+[node name="barrierWall17" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -1)
+
+[node name="barrierWall18" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 0)
+
+[node name="barrierWall19" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 1)
+
+[node name="barrierWall20" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 2)
+
+[node name="barrierWall21" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 3)
+
+[node name="barrierWall22" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 4)
+
+[node name="barrierWall23" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 5)
+
+[node name="barrierWall24" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 6)
+
+[node name="barrierWall25" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 7)
+
+[node name="barrierWall26" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 8)
+
+[node name="barrierWall27" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -8)
+
+[node name="barrierWall28" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -7)
+
+[node name="barrierWall29" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -6)
+
+[node name="barrierWall30" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -5)
+
+[node name="barrierWall31" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -4)
+
+[node name="barrierWall32" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -3)
+
+[node name="barrierWall33" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -2)
+
+[node name="barrierWall34" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -1)
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="treeLarge" parent="trees" instance=ExtResource("4_2a3od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62748, 0, -3.18605)
+
+[node name="treeSmall" parent="trees" instance=ExtResource("5_33ueq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54983, 0, -0.411684)
+
+[node name="treeLarge2" parent="trees" instance=ExtResource("4_2a3od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72051, -2.38419e-07, 2.09011)
+
+[node name="treeSmall2" parent="trees" instance=ExtResource("5_33ueq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42423, 0, 3.39162)
+
+[node name="treeSmall3" parent="trees" instance=ExtResource("5_33ueq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62108, 0, 4.68995)
+
+[node name="treeLarge3" parent="trees" instance=ExtResource("4_2a3od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61295, 0, 6.71197)
+
+[node name="treeLarge4" parent="trees" instance=ExtResource("4_2a3od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76507, 0, -1.49723)
+
+[node name="treeSmall4" parent="trees" instance=ExtResource("5_33ueq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65269, 0, -4.83196)
+
+[node name="raceCarOrange" parent="." instance=ExtResource("1_nxihb")]
+
+[node name="raceCarRed" parent="." instance=ExtResource("7_rmm1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
+
+[node name="overheadRoundColored" parent="." instance=ExtResource("8_i5efb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74735, 0.869677, 3.81577)
+visible = false

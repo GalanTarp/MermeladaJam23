@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg7maygdh50t2"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_y0cac"]
+[ext_resource type="PackedScene" uid="uid://dqllph7fo3vkq" path="res://fondo.tscn" id="2_1roda"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ubl4g"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_y0cac")
+
+[node name="Fondo" parent="." instance=ExtResource("2_1roda")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, 4.5, 2, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, 4.5, 2, 0)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimerBlinkEye" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 999.0
+offset_top = 567.0
+offset_right = 1102.0
+offset_bottom = 598.0
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "PARPADEAR"
+icon = SubResource("ViewportTexture_ubl4g")
+
+[node name="Blink" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Blink"]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 1158.0
+offset_bottom = 30.0
+color = Color(0.0862745, 0.0862745, 0.0862745, 0.752941)
+
+[node name="ColorRect2" type="ColorRect" parent="Blink"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 617.0
+offset_right = 1162.0
+offset_bottom = 647.0
+color = Color(0.0862745, 0.0862745, 0.0862745, 0.752941)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerBlinkEye" to="." method="_on_timer_blink_eye_timeout"]
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
