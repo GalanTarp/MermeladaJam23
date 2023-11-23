@@ -1,0 +1,29 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1700434359
+asphalt_road_2.jpg::CompressedTexture2D::1843507158161301942::1700428137::1700432447::1::::<><>::
+crowd.jpeg::CompressedTexture2D::3505438672296881955::1700429497::1700432678::1::::<><>::
+export_presets.cfg::TextFile::-1::1700433942::0::1::::<><>::
+fondo.tscn::PackedScene::8305686795755686680::1700433834::0::1::::<><>::uid://b3kirq0b2bqf1::::res://kenney_racing-kit/Models/GLTF format/raceCarOrange.glb<>uid://dh3x76s7pnln5::::res://shrub2.png<>uid://1jaj8l5kyere::::res://asphalt_road_2.jpg<>res://kenney_racing-kit/Models/GLTF format/treeLarge.glb<>uid://cndopof1bp1o1::::res://kenney_racing-kit/Models/GLTF format/barrierWall.glb<>res://kenney_racing-kit/Models/GLTF format/treeSmall.glb<>uid://digitn7ucdg33::::res://kenney_racing-kit/Models/GLTF format/raceCarRed.glb<>uid://cmmgg2quuxde4::::res://kenney_racing-kit/Models/GLTF format/overheadRoundColored.glb<>uid://c4mqj4d5wm8ki::::res://kenney_racing-kit/Models/GLTF format/flagCheckers.glb
+icon.svg::CompressedTexture2D::7164547634054848545::1700417585::1700432447::1::::<><>::
+Main.gd::GDScript::-1::1700432906::0::1::::<>Node<>::
+main.tscn::PackedScene::7647185074926707141::1700433834::0::1::::<><>::res://Main.gd<>uid://dqllph7fo3vkq::::res://fondo.tscn
+shrub2.png::CompressedTexture2D::7709841827402625628::1700426551::1700432447::1::::<><>::
+::res://export/::1700433941
+index.apple-touch-icon.png::CompressedTexture2D::1830867943389446937::1700433941::1700433187::1::::<><>::
+index.icon.png::CompressedTexture2D::7679420715049392204::1700433941::1700433187::1::::<><>::
+index.png::CompressedTexture2D::100892949551502413::1700433941::1700433187::1::::<><>::
+::res://kenney_racing-kit/::1700432532
+License.txt::TextFile::-1::1700417727::0::1::::<><>::
+::res://kenney_racing-kit/Models/::1700434359
+::res://kenney_racing-kit/Models/GLTF format/::1700434359
+barrierWall.glb::PackedScene::5692367036984307942::1700417727::1700432464::1::::<><>::
+flagCheckers.glb::PackedScene::6834079439171805728::1700417727::1700432464::1::::<><>::uid://c6dv27ime244v
+flagCheckersSmall.glb::PackedScene::1147643208839688110::1700417727::1700432464::1::::<><>::uid://cguj8lw4qhslx
+flagCheckers_checkers.png::CompressedTexture2D::6956213620368219387::1700417771::1700432467::1::::<><>::
+overheadRoundColored.glb::PackedScene::5640256484595003561::1700417727::1700432467::1::::<><>::
+raceCarGreen.glb::PackedScene::3982751285495279269::1700417727::1700432466::1::::<><>::
+raceCarOrange.glb::PackedScene::4372869056612407708::1700417727::1700432466::1::::<><>::
+raceCarRed.glb::PackedScene::7733679465883045796::1700417727::1700432466::1::::<><>::
+raceCarWhite.glb::PackedScene::4234574406372599676::1700417727::1700432466::1::::<><>::
+treeLarge.glb::PackedScene::4341730337761188637::1700434345::1700434359::1::::<><>::
+treeSmall.glb::PackedScene::10141822813143517::1700434345::1700434359::1::::<><>::

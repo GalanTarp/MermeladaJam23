@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqllph7fo3vkq"]
+[gd_scene load_steps=18 format=3 uid="uid://dqllph7fo3vkq"]
 
 [ext_resource type="PackedScene" uid="uid://b3kirq0b2bqf1" path="res://kenney_racing-kit/Models/GLTF format/raceCarOrange.glb" id="1_nxihb"]
 [ext_resource type="Texture2D" uid="uid://dh3x76s7pnln5" path="res://shrub2.png" id="2_qybj8"]
 [ext_resource type="Texture2D" uid="uid://1jaj8l5kyere" path="res://asphalt_road_2.jpg" id="3_il3qo"]
-[ext_resource type="PackedScene" uid="uid://doitsh7m05ml6" path="res://kenney_racing-kit/Models/GLTF format/treeLarge.glb" id="4_2a3od"]
+[ext_resource type="PackedScene" uid="uid://b24fwt70w18rh" path="res://kenney_racing-kit/Models/GLTF format/treeLarge.glb" id="4_2a3od"]
 [ext_resource type="PackedScene" uid="uid://cndopof1bp1o1" path="res://kenney_racing-kit/Models/GLTF format/barrierWall.glb" id="4_733g2"]
-[ext_resource type="PackedScene" uid="uid://c23l8vec2rutf" path="res://kenney_racing-kit/Models/GLTF format/treeSmall.glb" id="5_33ueq"]
+[ext_resource type="PackedScene" uid="uid://e6bfxx1f1w8" path="res://kenney_racing-kit/Models/GLTF format/treeSmall.glb" id="5_33ueq"]
 [ext_resource type="PackedScene" uid="uid://digitn7ucdg33" path="res://kenney_racing-kit/Models/GLTF format/raceCarRed.glb" id="7_rmm1r"]
 [ext_resource type="PackedScene" uid="uid://cmmgg2quuxde4" path="res://kenney_racing-kit/Models/GLTF format/overheadRoundColored.glb" id="8_i5efb"]
+[ext_resource type="PackedScene" uid="uid://c4mqj4d5wm8ki" path="res://kenney_racing-kit/Models/GLTF format/flagCheckers.glb" id="9_hktqn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jihtf"]
 albedo_texture = ExtResource("2_qybj8")
@@ -118,6 +119,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0,
 [node name="barrierWall9" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 8)
 
+[node name="barrierWall35" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 9)
+
+[node name="barrierWall36" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 10)
+
+[node name="barrierWall37" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 11)
+
 [node name="barrierWall10" parent="Carretera/Barrier" instance=ExtResource("4_733g2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -8)
 
@@ -224,6 +234,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65269, 0, -4.83196)
 [node name="raceCarRed" parent="." instance=ExtResource("7_rmm1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
 
-[node name="overheadRoundColored" parent="." instance=ExtResource("8_i5efb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74735, 0.869677, 3.81577)
-visible = false
+[node name="flagCheckers" parent="." instance=ExtResource("9_hktqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41284, 0, 4.70337)
+
+[node name="flagCheckers2" parent="." instance=ExtResource("9_hktqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08257, 0, 4.56807)
+
+[node name="overheadRoundColored2" parent="." instance=ExtResource("8_i5efb")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.2579, 0, 7.68446)

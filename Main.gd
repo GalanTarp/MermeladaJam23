@@ -8,10 +8,10 @@ func _process(delta):
 	$Fondo/raceCarOrange.translate(Vector3(0, 0, SPEEDYELLOW))
 	$Fondo/raceCarRed.translate(Vector3(0, 0, SPEEDRED))
 
-	if($Fondo/raceCarOrange.position.z > 10):
-		$Fondo/raceCarOrange.translate(Vector3(0, 0, -20))
-	if($Fondo/raceCarRed.position.z > 10):
-		$Fondo/raceCarRed.translate(Vector3(0, 0, -20))
+	if($Fondo/raceCarOrange.position.z > 12):
+		$Fondo/raceCarOrange.translate(Vector3(0, 0, -24))
+	if($Fondo/raceCarRed.position.z > 12):
+		$Fondo/raceCarRed.translate(Vector3(0, 0, -24))
 
 
 func _on_timer_timeout():
